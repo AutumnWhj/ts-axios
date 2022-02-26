@@ -18,6 +18,7 @@ specifiers:
   lint-staged: ^12.3.4
   nodemon: ^2.0.15
   prettier: ^2.5.1
+  qs: ^6.10.3
   rimraf: ^3.0.2
   rollup: ^2.68.0
   rollup-plugin-node-externals: ^4.0.0
@@ -52,6 +53,7 @@ devDependencies:
   lint-staged: 12.3.4
   nodemon: 2.0.15
   prettier: 2.5.1
+  qs: 6.10.3
   rimraf: 3.0.2
   rollup: 2.68.0
   rollup-plugin-node-externals: 4.0.0_rollup@2.68.0
@@ -1954,6 +1956,13 @@ packages:
       responselike: 1.0.2
     dev: true
 
+  /call-bind/1.0.2:
+    resolution: {integrity: sha512-7O+FbCihrB5WGbFYesctwmTKae6rOiIzmz1icreWJ+0aA7LJfuqhEso2T9ncpcFtzMQtzXf2QGGueWJGTYsqrA==}
+    dependencies:
+      function-bind: 1.1.1
+      get-intrinsic: 1.1.1
+    dev: true
+
   /callsites/3.1.0:
     resolution: {integrity: sha512-P8BjAsXvZS+VIDUI11hHCQEv74YT67YUi5JJFNWIqL235sBmjX4+qx9Muvls5ivyNENctx46xQLQ3aTuE7ssaQ==}
     engines: {node: '>=6'}
@@ -3233,6 +3242,14 @@ packages:
     engines: {node: 6.* || 8.* || >= 10.*}
     dev: true
 
+  /get-intrinsic/1.1.1:
+    resolution: {integrity: sha512-kWZrnVM42QCiEA2Ig1bG8zjoIMOgxWwYCEeNdwY6Tv/cOSeGpcoX4pXHfKUxNKVoArnrEr2e9srnAxxGIraS9Q==}
+    dependencies:
+      function-bind: 1.1.1
+      has: 1.0.3
+      has-symbols: 1.0.2
+    dev: true
+
   /get-package-type/0.1.0:
     resolution: {integrity: sha512-pjzuKtY64GYfWizNAJ0fr9VqttZkNiK2iS430LtIHzjBEr6bX8Am2zm4sW4Ro5wjWW5cAlRL1qAMTcXbjNAO2Q==}
     engines: {node: '>=8.0.0'}
@@ -3377,6 +3394,11 @@ packages:
   /has-flag/4.0.0:
     resolution: {integrity: sha512-EykJT/Q1KjTWctppgIAgfSO0tKVuZUjhgMr17kqTumMl6Afv3EISleU7qZUzoXDFTAHTDC4NOoG/ZxU3EvlMPQ==}
     engines: {node: '>=8'}
+    dev: true
+
+  /has-symbols/1.0.2:
+    resolution: {integrity: sha512-chXa79rL/UC2KlX17jo3vRGz0azaWEx5tGqZg5pO3NUyEJVB17dMruQlzCCOfUvElghKcm5194+BCRvi2Rv/Gw==}
+    engines: {node: '>= 0.4'}
     dev: true
 
   /has-value/0.3.1:
@@ -5500,6 +5522,13 @@ packages:
     engines: {node: '>=0.6.0', teleport: '>=0.2.0'}
     dev: true
 
+  /qs/6.10.3:
+    resolution: {integrity: sha512-wr7M2E0OFRfIfJZjKGieI8lBKb7fRCH4Fv5KNPEs7gJ8jadvotdsS08PzOKR7opXhZ/Xkjtt3WF9g38drmyRqQ==}
+    engines: {node: '>=0.6'}
+    dependencies:
+      side-channel: 1.0.4
+    dev: true
+
   /qs/6.9.7:
     resolution: {integrity: sha512-IhMFgUmuNpyRfxA90umL7ByLlgRXu6tIfKPpF5TmcfRLlLCckfP/g3IQmju6jjpu+Hh8rA+2p6A27ZSPOOHdKw==}
     engines: {node: '>=0.6'}
@@ -5941,6 +5970,14 @@ packages:
   /shebang-regex/3.0.0:
     resolution: {integrity: sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A==}
     engines: {node: '>=8'}
+    dev: true
+
+  /side-channel/1.0.4:
+    resolution: {integrity: sha512-q5XPytqFEIKHkGdiMIrY10mvLRvnQh42/+GoBlFW3b2LXLE2xxJpZFdm94we0BaoV3RwJyGqg5wS7epxTv0Zvw==}
+    dependencies:
+      call-bind: 1.0.2
+      get-intrinsic: 1.1.1
+      object-inspect: 1.12.0
     dev: true
 
   /signal-exit/3.0.7:
