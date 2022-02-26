@@ -27,8 +27,11 @@ const router = express.Router()
 
 router.get('/simple/get', function(req, res) {
   res.json({
-    msg: `hello world`
+    msg: `hello world1`
   })
+})
+router.get('/base/get', function(req, res) {
+  res.json(req.query)
 })
 
 app.use(router)
