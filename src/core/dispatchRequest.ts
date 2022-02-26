@@ -18,7 +18,7 @@ function processConfig(config: AxiosRequestConfig) {
 
 function transformUrl(config: AxiosRequestConfig): string {
   const { url, params } = config || {}
-  return buildURL(url, params)
+  return buildURL(url!, params)
 }
 function transformRequestData(config: AxiosRequestConfig) {
   const { data } = config || {}

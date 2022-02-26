@@ -7,7 +7,8 @@ import {
   RejectedFn
 } from '../types'
 import dispatchRequest from './dispatchRequest'
-import InterceptorManager from './Interceptor'
+import InterceptorManager from './InterceptorManager'
+import defaults from './defaults'
 interface Interceptors {
   request: InterceptorManager<AxiosRequestConfig>
   response: InterceptorManager<AxiosResponse>
@@ -17,8 +18,10 @@ interface PromiseChain {
   rejected?: RejectedFn
 }
 export default class Axios {
+  defaults: AxiosRequestConfig
   interceptors: Interceptors
-  constructor() {
+  constructor(initConfig: AxiosRequestConfig) {
+    this.defaults = initConfig
     this.interceptors = {
       request: new InterceptorManager<AxiosRequestConfig>(),
       response: new InterceptorManager<AxiosResponse>()
