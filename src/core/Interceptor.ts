@@ -1,4 +1,3 @@
-import { useAsPath } from 'tslint/lib/configuration'
 import { ResolvedFn, RejectedFn } from '../types'
 interface Interceptor<T> {
   resolved: ResolvedFn<T>
