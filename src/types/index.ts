@@ -84,3 +84,6 @@ export interface ResolvedFn<T = any> {
 export interface RejectedFn {
   (error: any): any
 }
+export interface AxiosStatic extends AxiosInstance {
+  create(config?: AxiosRequestConfig): AxiosInstance
+}
