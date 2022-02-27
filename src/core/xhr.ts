@@ -1,3 +1,4 @@
+import atob from 'atob'
 import { AxiosRequestConfig, AxiosResponse, AxiosPromise } from '../types'
 import { parseHeaders } from '../helpers/headers'
 import { createError } from '../helpers/error'
@@ -19,7 +20,8 @@ export default function xhr(config: AxiosRequestConfig): AxiosPromise {
       xsrfCookieName,
       xsrfHeaderName,
       onDownloadProgress,
-      onUploadProgress
+      onUploadProgress,
+      auth
     } = config
 
     const request = new XMLHttpRequest()
@@ -94,6 +96,9 @@ export default function xhr(config: AxiosRequestConfig): AxiosPromise {
     }
 
     function processHeaders(): void {
+      if (auth) {
+        headers['Authorization'] = 'Basic ' + atob(auth.username + ':' + auth.password)
+      }
       if (isFormData(data)) {
         delete headers['Content-Type']
       }
