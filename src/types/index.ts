@@ -99,6 +99,11 @@ export interface AxiosStatic extends AxiosInstance {
   CancelToken: CancelTokenStatic
   Cancel: CancelStatic
   isCancel: (value: any) => boolean
+
+  all<T>(promises: Array<T | Promise<T>>): Promise<T[]>
+  spread<T, R>(callback: (...args: T[]) => R): (arr: T[]) => R
+
+  Axios: AxiosClassStatic
 }
 
 export interface CancelToken {
@@ -135,4 +140,7 @@ export interface CancelStatic {
 export interface AxiosBasicCredentials {
   username: string
   password: string
+}
+export interface AxiosClassStatic {
+  new (config: AxiosRequestConfig): Axios
 }
