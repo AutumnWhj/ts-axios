@@ -13,15 +13,15 @@ export default function dispatchRequest(config: AxiosRequestConfig): AxiosPromis
 }
 
 function processConfig(config: AxiosRequestConfig) {
-  config.url = transformUrl(config)
+  config.url = transformURL(config)
   config.data = transform(config.data, config.headers, config.transformRequest)
 
   config.headers = flattenHeaders(config.headers, config.method!)
 }
 
-function transformUrl(config: AxiosRequestConfig): string {
-  const { url, params } = config || {}
-  return buildURL(url!, params)
+function transformURL(config: AxiosRequestConfig): string {
+  const { url, params, paramsSerializer } = config
+  return buildURL(url!, params, paramsSerializer)
 }
 
 function transformResponseData(res: AxiosResponse): AxiosResponse {
