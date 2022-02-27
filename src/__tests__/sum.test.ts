@@ -1,6 +1,6 @@
 import sum from '../sum'
 
-test('adds 1 + 2 to equal 3', () => {
+test('adds 1 + 2 to 1equal 311', () => {
   // Arrange
   let x: number = 1,
     y: number = 2

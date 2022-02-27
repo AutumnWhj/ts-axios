@@ -13,6 +13,9 @@ export function isPlainObject(val: any): val is Object {
 export function isFormData(val: any): boolean {
   return typeof val !== 'undefined' && val instanceof FormData
 }
+export function isURLSearchParams(val: any): val is URLSearchParams {
+  return typeof val !== 'undefined' && val instanceof URLSearchParams
+}
 
 export function extend<T, U>(to: T, from: U): T & U {
   for (const key in from) {

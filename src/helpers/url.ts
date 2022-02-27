@@ -1,4 +1,4 @@
-import { isDate, isPlainObject } from './util'
+import { isDate, isPlainObject, isURLSearchParams } from './util'
 
 function encode(val: string): string {
   return encodeURIComponent(val)
@@ -9,9 +9,6 @@ function encode(val: string): string {
     .replace(/%20/g, '+')
     .replace(/%5B/gi, '[')
     .replace(/%5D/gi, ']')
-}
-export function isURLSearchParams(val: any): val is URLSearchParams {
-  return typeof val !== 'undefined' && val instanceof URLSearchParams
 }
 
 export function buildURL(
